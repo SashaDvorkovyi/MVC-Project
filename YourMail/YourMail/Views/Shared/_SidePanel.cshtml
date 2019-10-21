@@ -1,0 +1,47 @@
+﻿@model List<string>
+
+@using YourMail.Infrastructure
+
+<ul class="sidebarUl">
+    <li class="sidebarLi">
+        <a class="links" href="~/Message/New_letter">
+            <div class="sidebarDiv">
+                <div class="sidebarDivName">New Letter</div>
+            </div>
+        </a>
+    </li>
+    <li class="sidebarLi">
+        <a class="links" href="@Url.Action("ShowTypesLetters", "Message", routeValues: new { numberOfType = (int)NumberOfTypes.IncomingLetters })">
+            <div class="sidebarDiv">
+                <div class="unread_quantity">@Model[0]</div>
+                <div class="count_all">@Model[1]</div>
+                <div class="sidebarDivName">Incoming</div>
+            </div>
+        </a>
+    </li>
+    <li class="sidebarLi">
+        <a class="links" href="@Url.Action("ShowTypesLetters", "Message", routeValues: new { numberOfType = (int)NumberOfTypes.SendLetters})">
+            <div class="sidebarDiv">
+                <div class="unread_quantity">@Model[2]</div>
+                <div class="count_all">@Model[3]</div>
+                <div class="sidebarDivName">Send</div>
+            </div>
+        </a>
+    </li>
+    <li class="sidebarLi">
+        <a class="links" href="@Url.Action("ShowTypesLetters", "Message", routeValues: new { numberOfType = (int)NumberOfTypes.SpamLetters})">
+            <div class="sidebarDiv">
+                <div class="unread_quantity">@Model[4]</div>
+                <div class="count_all">@Model[5]</div>
+                <div class="sidebarDivName">Spam</div>
+            </div>
+        </a>
+    </li>
+    <li class="sidebarLi">
+        <a class="links" href="~/Message/AddSpamMail" name="Add spam mail">
+            <div class="sidebarDiv">
+                <div class="sidebarDivName">Add spam mail</div>
+            </div>
+        </a>
+    </li>
+</ul>

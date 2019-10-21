@@ -1,0 +1,70 @@
+﻿@model  YourMail.Models.Letter
+
+@{
+    ViewBag.Title = "New letter";
+    var letter = Model;
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>
+
+<section>
+    @using (Html.BeginForm("New_letter", "Message", FormMethod.Post, htmlAttributes: new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>New Letter</legend>
+            <ol>
+                <li class="form">
+                    @Html.LabelFor(x => x.FromWhom, new { @class = "labelform" })
+                    @Html.Label("From Whom", ": " + User.Identity.Name)
+                </li>
+                <li class="form">
+                    @Html.LabelFor(x => x.ToWhoms, "To whom", new { @class = "labelform" })<br />
+                    @Html.TextBoxFor(x => x.ToWhoms, new { @class = "TexBoxLetter" })
+                    @Html.ValidationMessageFor(x => x.ToWhoms)
+                </li>
+                <li class="form">
+                    @Html.LabelFor(x => x.Subject, new { @class = "labelform" })<br />
+                    @Html.TextBoxFor(x => x.Subject, new { @class = "TexBoxLetter" })
+                    @Html.ValidationMessageFor(x => x.Subject)
+                </li>
+                <li class="form">
+                    @Html.LabelFor(x => x.Content, new { @class = "labelform" })<br />
+                    @Html.TextAreaFor(x => x.Content, new { @class = "TexAreaLetter" })
+            </ol>
+            @if (letter.FileName != null)
+            {
+                @Html.ActionLink(letter.FileName, "DownloadFile", "Message", routeValues: new { letterId = letter.Id }, htmlAttributes: new { @id = "fileEXist" });
+                @Html.TextBoxFor(x => x.FileName, htmlAttributes: new { @id = "fileName", hidden = "hidden" });
+                @Html.TextBoxFor(x => x.FilePuth, htmlAttributes: new { @id = "filePuth", hidden = "hidden" });
+                @Html.TextBoxFor(x => x.FileType, htmlAttributes: new { @id = "fileType", hidden = "hidden" });
+                <input type="button" value="Change file" id="button"/>
+                <input type="file" name="upload"  hidden="hidden" id="file"/><br />
+            }
+            else
+            {
+                <input type="file" name="upload"  /><br />
+            }
+            <input type="submit" value="Send" />
+        </fieldset>
+    }
+</section>
+
+@section Scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#button").on("click", function () {
+            $("#fileEXist").remove();
+            $("#button").remove();
+            $("fileName").remove();
+            $("filePuth").remove();
+            $("fileType").remove();
+            $("#file").removeAttr("hidden");
+        });
+    });
+</script>
+}
