@@ -34,12 +34,7 @@ namespace YourMail.Filters
                     {
                         //context.Database.Delete();
                         if (!context.Database.Exists())
-                        {
-                            if (!Directory.Exists("App_Data"))
-                            {
-                                Directory.CreateDirectory("App_Data");
-                            }
-                                
+                        {     
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
                         }
                     }

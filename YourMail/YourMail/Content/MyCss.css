@@ -25,12 +25,12 @@ TR TD:nth-child(2) {
 }
 
 TR TD:nth-child(3) {
-    width: 30%;
+    width: 35%;
     /*max-height:*/
 }
 
 TR TD:nth-child(4) {
-    width: 50%;
+    width: 40%;
 }
 
 TR TD:nth-child(5), TR TD:nth-child(6) {
@@ -48,6 +48,17 @@ TR TD:nth-child(5), TR TD:nth-child(6) {
 .DontRead {
     color: black;
     font-weight: bold;
+    background: #9ed179;
+}
+
+.NubmerOfPage {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 3px;
+    border: 1px solid black;
+    background: #20bdad;
 }
 
 .links {

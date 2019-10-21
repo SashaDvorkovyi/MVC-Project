@@ -163,7 +163,7 @@ namespace YourMail.Controllers
             {
                 if (numberOfType != null && numberOfType < 3)
                 {
-                    var typeLetter = await db.listTypesOfLetter[(int)numberOfType].FirstOrDefaultAsync(x => x.LetterForDB.Id == letterId || x.OrderUser.Id == userId);
+                    var typeLetter = await db.listTypesOfLetter[(int)numberOfType].FirstOrDefaultAsync(x => x.LetterForDB.Id == letterId && x.OrderUser.Id == userId);
                     if (typeLetter != null)
                     {
                         if (typeLetter.LetterForDB.NumberOfOwners == 0)
