@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat", "Chat\Chat.csproj", "{78C4BFF1-95C7-420F-9F4D-B25828060F52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatHost", "ChatHost\ChatHost.csproj", "{F348C4FE-B2B9-4262-98D4-B0ABF3BE27EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{18CA69DA-6F45-42E4-9B8F-49BA1DFBA8C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78C4BFF1-95C7-420F-9F4D-B25828060F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C4BFF1-95C7-420F-9F4D-B25828060F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C4BFF1-95C7-420F-9F4D-B25828060F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C4BFF1-95C7-420F-9F4D-B25828060F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F348C4FE-B2B9-4262-98D4-B0ABF3BE27EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F348C4FE-B2B9-4262-98D4-B0ABF3BE27EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F348C4FE-B2B9-4262-98D4-B0ABF3BE27EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F348C4FE-B2B9-4262-98D4-B0ABF3BE27EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CA69DA-6F45-42E4-9B8F-49BA1DFBA8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CA69DA-6F45-42E4-9B8F-49BA1DFBA8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CA69DA-6F45-42E4-9B8F-49BA1DFBA8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CA69DA-6F45-42E4-9B8F-49BA1DFBA8C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A10FFCF-E53E-4B8A-81A5-5AE5ECC1E876}
+	EndGlobalSection
+EndGlobal
