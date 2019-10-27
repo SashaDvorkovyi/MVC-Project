@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using WebMatrix.WebData;
 using YourMail.Models;
 using System.IO;
-
+using System.Web;
 
 namespace YourMail.Filters
 {
@@ -33,6 +33,11 @@ namespace YourMail.Filters
                     using (var context = new DataBaseContext())
                     {
                         //context.Database.Delete();
+                        var folderFordb = HttpContext.Current.Server.MapPath("~/App_Data");
+                        if (!Directory.Exists(folderFordb))
+                        {
+                            Directory.CreateDirectory(folderFordb);
+                        }
                         if (!context.Database.Exists())
                         {     
                             ((IObjectContextAdapter)context).ObjectContext.CreateDatabase();
