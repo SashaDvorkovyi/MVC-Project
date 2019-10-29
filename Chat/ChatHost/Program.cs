@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using Chat;
+using System.Data.Entity.Infrastructure;
 
 namespace ChatHost
 {
@@ -13,10 +15,13 @@ namespace ChatHost
         {
             using (var host = new ServiceHost(typeof(Chat.ServiceChat)))
             {
+                
                 host.Open();
                 Console.WriteLine("Хост стартвал!");
                 Console.ReadKey();
             }
         }
+
+
     }
 }
